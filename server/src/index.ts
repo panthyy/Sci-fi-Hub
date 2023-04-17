@@ -1,17 +1,21 @@
 import { fetchRequestHandler } from "@trpc/server/adapters/fetch";
 import { createContext } from "./context";
-import { exampleRouter } from "./routers";
 import { router } from "./trpc";
+import * as routers from "./routers";
+
+const appRouter = router(routers);
 
 export type ENV = {
   NODE_ENV: "development" | "production";
+  kv: KVNamespace;
+  d1: D1Database;
 };
-
-const appRouter = router({
-  example: exampleRouter,
-});
 export default {
-  async fetch(request: Request, env: ENV, ctx: ExecutionContext): Promise<Response> {
+  async fetch(
+    request: Request,
+    env: ENV,
+    ctx: ExecutionContext
+  ): Promise<Response> {
     if (request.method === "OPTIONS") {
       return new Response(null, {
         headers: {
@@ -35,9 +39,11 @@ export default {
           res.headers.set("Access-Control-Allow-Origin", "*");
           resolve(res);
         }).catch((err) => {
+          console.log(err);
           reject(err);
         });
       } catch (error) {
+        console.log(error);
         reject(
           new Response("Internal Server Error", {
             status: 500,

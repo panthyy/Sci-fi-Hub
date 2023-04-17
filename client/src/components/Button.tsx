@@ -71,6 +71,14 @@ const StyledButton = styled.button((props: ButtonProps) => {
     outline && primary && tw`border-blue-500 text-blue-500 hover:bg-blue-500`,
   ];
 });
+
+/**
+ *
+ * Variants: primary, success, danger, outline, disabled, loading
+ *
+ *
+ * @returns
+ */
 export const Button = (props: ButtonProps) => {
   return (
     <StyledButton {...props} css={props.loading && tw`relative`}>
@@ -79,7 +87,7 @@ export const Button = (props: ButtonProps) => {
           <div
             css={tw`top-0  animate-spin left-0 absolute w-full h-full flex justify-center items-center`}
           >
-            l
+            <Spinner />
           </div>
           <div aria-hidden css={tw`opacity-0`}>
             {props.children}

@@ -39,9 +39,6 @@ export default function App() {
     })
   );
 
-  console.log("trpcClient", trpcClient);
-  console.log("queryClient", queryClient);
-
   return (
     <trpc.Provider client={trpcClient} queryClient={queryClient}>
       <QueryClientProvider client={queryClient}>

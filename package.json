@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "install": "cd client && yarn install && cd ../server && yarn install",
     "dev": "concurrently \"cd server && yarn dev\" \"cd client && yarn dev\""
   },
   "keywords": [],
@@ -13,6 +14,7 @@
   "devDependencies": {
     "@cloudflare/workers-types": "^4.20230404.0",
     "concurrently": "^8.0.1",
+    "rspack": "^0.0.1",
     "vitest": "^0.29.8",
     "wrangler": "^2.14.0"
   },

@@ -5,7 +5,7 @@ export const Layout = ({ children }: { children: React.ReactNode }) => {
   return (
     <div css={tw`flex flex-col w-full h-full `}>
       <Header />
-      {children}
+      <div css={tw`px-10 py-4`}>{children}</div>
     </div>
   );
 };
