@@ -1,0 +1,24 @@
+{
+  "movie": {
+    "title": "string",
+    "year": "string",
+    "directors": "string[]",
+    "cast": "string[]",
+    "country": "string[]",
+    "genre": "string[]",
+    "rated": "string",
+    "released": "string"
+  },
+  "actor": {
+    "name": "string"
+  },
+  "director": {
+    "name": "string"
+  },
+  "country": {
+    "name": "string"
+  },
+  "genre": {
+    "name": "string"
+  }
+}

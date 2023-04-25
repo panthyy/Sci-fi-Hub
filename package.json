@@ -5,8 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "install": "cd client && yarn install && cd ../server && yarn install",
-    "dev": "concurrently \"cd server && yarn dev\" \"cd client && yarn dev\""
+    "dev": "concurrently \"cd apps/server && yarn dev\" \"cd apps/client && yarn dev\""
   },
   "keywords": [],
   "author": "",
